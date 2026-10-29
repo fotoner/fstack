@@ -74,7 +74,8 @@ def expected_targets(include_default):
     home = Path.home()
     cands, others = [], False
     for d in sorted(home.glob(".claude-*")):
-        if d.is_dir():
+        # install.sh와 같은 규칙: 실제 설정 폴더만, 이름에 backup이 든 폴더는 뺀다
+        if d.is_dir() and "backup" not in d.name and ((d / ".claude.json").exists() or (d / "projects").is_dir()):
             cands.append(d / "CLAUDE.md")
             others = True
     if (home / ".claude").is_dir() and (include_default or not others):

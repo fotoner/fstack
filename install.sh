@@ -60,15 +60,23 @@ is_fstack() { [ -L "$1" ] && [ "$(resolve "$1")" = "$REPO_DIR/skills/$(basename 
 exists() { [ -e "$1" ] || [ -L "$1" ]; }
 
 # --- 대상 찾기 -------------------------------------------------------------
+# 계정 폴더: ~/.claude-<이름> 중 실제로 쓰는 설정 폴더(.claude.json 또는 projects/가 있음). 이름에 backup이 든 폴더는 뺀다.
+is_account_dir() {
+  case "$(basename "$1")" in *backup*) return 1 ;; esac
+  [ -d "$1" ] && { [ -e "$1/.claude.json" ] || [ -d "$1/projects" ]; }
+}
 SKILL_DIRS=()
-for base in "$HOME/.claude" "$HOME"/.claude-* "$HOME/.agents" "$HOME/.codex"; do
+for base in "$HOME/.claude" "$HOME/.agents" "$HOME/.codex"; do
   [ -d "$base" ] && SKILL_DIRS+=("$base/skills")
+done
+for base in "$HOME"/.claude-*; do
+  is_account_dir "$base" && SKILL_DIRS+=("$base/skills")
 done
 
 CLAUDE_FILES=()
 others=0
 for base in "$HOME"/.claude-*; do
-  if [ -d "$base" ]; then CLAUDE_FILES+=("$base/CLAUDE.md"); others=1; fi
+  if is_account_dir "$base"; then CLAUDE_FILES+=("$base/CLAUDE.md"); others=1; fi
 done
 default_note=""
 if [ -d "$HOME/.claude" ]; then
