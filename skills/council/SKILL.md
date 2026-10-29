@@ -43,7 +43,7 @@ description: >-
 
 ### 1. 위원 확인
 - `orchestrator_capabilities`로 각 위원의 provider·model·effort를 확인한다. ID를 스킬에 적지 않는다.
-- 원격 위원에게는 대상 전문을 넣거나, 크면 `~/dev/fstack/local/routing.md` 3절의 Taildrop 경로로 보낸다.
+- 원격 위원에게는 대상 전문을 넣거나, 크면 `~/dev/fstack/local/routing.md` 3절의 파일 전달 경로로 보내고, 받는 쪽에서 sha256을 대조하게 한다.
 
 ### 2. 위임 (라운드마다 새로)
 - 위원마다 새 `delegate_task`: `role: "review"`, `mode: "async"`, 라운드별 새 `clientRequestId`, 모델과 effort는 `target.providerInstanceId`·`target.model`·`target.options`. 이전 라운드 위원 스레드에 `t3_thread_send`로 이어서 묻지 않는다.

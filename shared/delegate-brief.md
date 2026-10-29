@@ -5,7 +5,7 @@
 보내기 전 점검:
 - 모델과 effort를 `~/dev/fstack/local/routing.md` 역할표로 정하고 호출 인자에 적었는가(C17). 상속에 맡기지 않는다.
 - 동시 상한(ROUTING 1절)을 넘지 않는가.
-- 원격 위임이면 문서 전문(큰 것은 Taildrop)을 넣었고 `target.projectId`를 줬는가(ROUTING 3절).
+- 원격 위임이면 문서 전문(큰 것은 ROUTING 3절의 파일 전달 경로)을 넣었고 `target.projectId`를 줬는가(ROUTING 3절).
 - 같은 일을 두 자식에게 겹쳐 주지 않았는가.
 
 ```markdown

@@ -51,6 +51,7 @@ cd ~/dev/fstack
 
 - 인증된 [GitHub CLI](https://cli.github.com)(`gh`), `python3`
 - `council`, `sol-loop`: 다른 회사 모델을 하위 에이전트로 부를 수 있는 하네스(T3 Code면 `delegate_task`)
+- 영상 조사(선택): `watch` 스킬. 없으면 `research`는 영상을 자막·페이지 텍스트로만 본다
 
 ## 개인 설정
 
