@@ -63,7 +63,17 @@ cd ~/dev/fstack
 
 ```json
 {"hooks": {"PreToolUse": [{"matcher": "Bash|Agent|Task|mcp__t3-code__delegate_task",
-  "hooks": [{"type": "command", "command": "python3 -I ~/dev/fstack/tools/hooks/fstack_guard.py"}]}]}}
+  "hooks": [{"type": "command", "command": "python3 -I ~/dev/fstack/tools/hooks/fstack_guard.py"}]}],
+  "Stop": [{"hooks": [{"type": "command", "command": "python3 -I ~/dev/fstack/tools/hooks/korean_guard.py"}]}]}}
+```
+
+- `fstack_guard.py`: 이름·패턴으로 프로세스 종료(H1), 모델 인자 없는 위임(C17)을 막는다.
+- `korean_guard.py`: 마지막 응답이 영어 위주면 한국어로 다시 쓰게 한다(C3). 시험: `python3 -I tools/hooks/test_korean_guard.py`
+
+에이전트 서명 끄기(`ship` 3·6단계, Claude Code `settings.json`):
+
+```json
+{"attribution": {"commit": "", "pr": "", "sessionUrl": false}}
 ```
 
 ## 라이선스
