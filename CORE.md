@@ -38,18 +38,20 @@
 - **H4** 지우기 전에 목록을 보여 주고 다른 계정·프로젝트 자료가 섞였는지 본다.
 
 ## 스킬 지도
-스킬은 사용자 말이나 `$이름`으로 켜진다. Skill 도구가 없는 하네스는 `~/dev/fstack/skills/<이름>/SKILL.md`를 읽는다.
+스킬은 사용자 말이나 `$이름`으로 켜진다. Skill 도구가 없으면 `~/dev/fstack/skills/<이름>/SKILL.md`를 읽는다.
 - council: 컨실, 적대적 검증, 교차 리뷰
 - research: 조사, URL 요약, 병렬 조사, 의심 해소
+- spec: 기획, 스펙
+- proto: 프로토타입
 - build: 구현, 이슈별 병렬, 웨이브
 - verify: 됐어?, 배포됐어?, QA, D2
-- ship: 커밋·푸시·PR·머지 단계
-- sol-loop: Sol 1인 코드 리뷰 루프
+- ship: 커밋·푸시·PR·머지
+- sol-loop: Sol 1인 코드 리뷰
 - full-send: 머지까지 무인으로(개인 저장소)
 - full-stop: 머지 직전까지 무인으로
 - ops: 헬스체크, 모니터링, 예약 작업
 - setup: 설치, 장애, 기기 정리
 - walk: 이슈 브리핑, 킥오프, 결정 안건
 - wrap: 마무리, 핸드오프, 이어받기
-- harness: 저장소를 에이전트용으로 구성·축소
-- lesson: 교정 기록, 교정 분석
+- harness: 저장소 지침 구성·축소
+- lesson: 교정 기록·분석
