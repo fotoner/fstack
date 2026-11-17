@@ -22,7 +22,7 @@ resolve() { readlink -f "$1" 2>/dev/null || python3 -c 'import os,sys;print(os.p
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 WANT_DIR="$(cd "$HOME/dev/fstack" 2>/dev/null && pwd -P || echo "$HOME/dev/fstack")"
-SKILLS=(council research spec proto build verify ship sol-loop full-send full-stop ops setup walk wrap harness lesson)
+SKILLS=(council research spec proto build verify ship sol-loop polish full-send full-stop ops setup walk wrap harness lesson)
 # 대체 대상(fstack이 대신하는 옛 스킬 이름)은 개인 폴더의 local/retire.txt에서 읽는다. 없으면 비어 있다.
 RETIRE=()
 if [ -f "$REPO_DIR/local/retire.txt" ]; then

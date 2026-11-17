@@ -9,6 +9,7 @@ Fotone의 Claude Code, Codex, Pi용 에이전트 스킬. [T3 Code](https://githu
 | `full-send` | 증명 → 리뷰 → QA → PR → 감시 → 머지까지 무인으로 진행 |
 | `full-stop` | `full-send`와 같고 머지 직전에서 멈춤 |
 | `sol-loop` | GPT Sol과 합의할 때까지 diff 리뷰 반복 |
+| `polish` | Gemini Hydrogen의 첨삭으로 한국어 글을 읽기 쉽게 다듬기 |
 | `council` | 회사가 다른 모델 3개로 합의할 때까지 검토 |
 | `ship` | 말한 단계까지만 커밋·푸시·PR·머지 |
 | `build` | 재현 후 최소 수정, 이슈별 worktree, 웨이브 구현 |
@@ -29,8 +30,8 @@ Fotone의 Claude Code, Codex, Pi용 에이전트 스킬. [T3 Code](https://githu
 
 | 도구 | 쓰는 곳 | 없을 때 |
 |---|---|---|
-| `delegate_task` | `council`, `sol-loop`, 하위 에이전트 위임 | 하네스의 하위 에이전트. 다른 회사 모델을 못 부르면 리뷰 미실행으로 보고 |
-| `orchestrator_capabilities` | `council`, `sol-loop` | 하네스의 모델 목록 |
+| `delegate_task` | `council`, `sol-loop`, `polish`, 하위 에이전트 위임 | 하네스의 하위 에이전트. 다른 회사 모델을 못 부르면 리뷰 미실행으로 보고 |
+| `orchestrator_capabilities` | `council`, `sol-loop`, `polish` | 하네스의 모델 목록 |
 | `watch_pull_request`, `unwatch_pull_request` | `full-send`, `full-stop`, `ship` | `gh pr checks --watch`(검사만 기다린다) |
 | `link_pull_request` | `ship` | 생략 |
 | `schedule_task` | `ops` | 하네스의 예약 기능 |

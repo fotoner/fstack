@@ -13,7 +13,7 @@ import argparse, re, sys
 from pathlib import Path
 
 # 크기 예산(바이트). 늘리려면 이 값을 고치고 이유를 커밋 메시지에 적는다.
-BUDGET = {"CORE.md": 9000, "description_each": 700, "description_total": 6800, "skill_each": 12000}
+BUDGET = {"CORE.md": 9100, "description_each": 700, "description_total": 7200, "skill_each": 12000}
 MODEL_ID = re.compile(r"\b(gpt-\d[\w.-]*|claude-(?:opus|sonnet|haiku|fable)-\d[\w.-]*|gemini-\d[\w.-]*)\b")
 RULE_ID = re.compile(r"\b([CH]\d{1,2})\b")
 FSTACK_REF = re.compile(r"`~/dev/fstack/([^`\s]+?)`")
