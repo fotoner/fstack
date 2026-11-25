@@ -48,6 +48,7 @@
 - ship: 커밋·푸시·PR·머지
 - sol-loop: Sol 1인 코드 리뷰
 - polish: 첨삭, 윤문
+- cold-read: 콜드 리드, 암묵지
 - full-send: 머지까지 무인으로(개인 저장소)
 - full-stop: 머지 직전까지 무인으로
 - ops: 헬스체크, 모니터링, 예약 작업
